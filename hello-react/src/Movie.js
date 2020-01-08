@@ -2,6 +2,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './Movie.css';
+// import LineEllipsis from './Line';
 
 function Movie({title, poster, genres, synopsis}) {
     return (
@@ -16,9 +17,16 @@ function Movie({title, poster, genres, synopsis}) {
                     {genres.map((genre, index) => <MovieGenre genre={genre} key={index} />)}
                 </div>
                 {/* p = paragraph(문단의 약어) */}
-                <p className="Movie__Synopsis">
+                <div className="Movie__Synopsis">
+                    {/* <LineEllipsis 
+                        text={synopsis}
+                        maxLine='3'
+                        ellipsis='...'
+                        trimRight
+                        basedOn='letters'
+                    /> */}
                     {synopsis}
-                </p>
+                </div>
             </div>
         </div>
     )

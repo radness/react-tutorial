@@ -75,15 +75,17 @@ class App extends Component {
   }
 
   _callApi = () => {
-    return fetch('https://yts.lt/api/v2/list_movies.json?sort_by=rating')
+    // return fetch('https://yts.lt/api/v2/list_movies.json?sort_by=rating')
+    return fetch('https://yts.lt/api/v2/list_movies.json?sort_by=download_count')
     .then(potato => potato.json())
     .then(json => json.data.movies)
     .catch(err => console.log(err))
   }
 
   render() {
+    const { movies } = this.state;
     return (
-      <div className="App">
+      <div className={movies ? "App" : "App-loading"}>
         {this.state.movies ? this._renderMovies() : 'Loaading'}
         {/* Movie는 현 싸이클의 현재 엘리먼트를 의미 */}
         {/* {this.state.movies.map((movie, index) => {

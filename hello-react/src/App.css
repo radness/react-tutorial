@@ -2,13 +2,13 @@
     padding:50px;
     display: flex;
     justify-content: space-around;
-    flex-wrap: warp;
-    font-size: 14px;
+    flex-wrap: wrap;
+    font-size:14px;
 }
 
-.App--loading {
+.App--loading{
     display: flex;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     height: 100%;
 }
